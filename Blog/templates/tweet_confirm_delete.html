@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>are you serious to delete this?</h2>
+<p>{{ tweet.content }}</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">yes, delete</button>
+    <a href="{% url 'tweet_list' %}">cancel</a>
+</form>
+{% endblock %}
